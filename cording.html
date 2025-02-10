@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casteria</title>
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="cording.css">
+</head>
+
+<header>
+    <h1>Casteria</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Food</a></li>
+            <li><a href="#">Drink</a></li>
+            <li><a href="#">お問合わせ</a></li>
+            <li class="search-box">
+                <input type="text" placeholder="Search">
+                <button type="submit">Search</button>
+            </li>
+        </ul>
+    </nav>
+    
+</header>
+
+<body>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/interior.jpg" alt="Interior">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/restaurant.jpg" alt="Restaurant">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/food.jpg" alt="Food">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/food2.jpg" alt="Food2">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <!-- SwiperのJSを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="cording.js"></script>
+
+</body>
+
+<body>
+    <h2>新型コロナウイルスに対する取り組みの最新情報をご案内</h2>
+    <div class="wrapper">
+        <div class="container">
+            <h3 class="toggle-header" onclick="toggleVisibility('hygiene')">■衛生面に関して</h3>
+            <div id="hygiene" class="hidden content">
+                <p>・マスクを着用しての接客 </p>
+                <p>・出勤前の検温の徹底</p>
+                <p>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</p>
+                <p>・より高い頻度の手洗いの施行</p>
+                <p>・テーブルにお客様用の消毒アルコールの設置</p>
+                <p>・従業員間の距離確保のため、休憩や研修時の客席の利用</p>
+            </div>
+        </div>
+        <div class="container">
+            <h3 class="toggle-header" onclick="toggleVisibility('please')">■お客様へのご協力のお願い</h3>
+            <div id="please" class="hidden content">
+                <p>・店内では、飲食時以外のマスクの着用をお願いいたします </p>
+                <p>・入店時の手指の消毒にご協力ください</p>
+                <p>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</p>
+                <p>・多数でお越しの際は、お1人がまとめてご注文願います（混雑時に入場制限をする場合がございます）</p>
+                <p>・発熱や体調不良の際はご入店をお控えください</p>
+            </div>
+        </div>
+        <div class="container">
+            <h3 class="toggle-header" onclick="toggleVisibility('service')">■衛生面に関して</h3>
+            <div id="service" class="hidden content">
+                <p>・直接お渡しする商品の提供、金銭授受時にグローブの着用 </p>
+                <p>・ドリンクやフードのサンプリング中止</p>
+                <p>・地域活動・イベントの中止</p>
+                <p>・混雑時間帯の客席の譲り合いへのご協力お願いの実施</p>
+                <p>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</p>
+                <p>・混雑状況に応じたドライブスルーサービスの一時休止や店内客席利用の制限</p>
+            </div>
+        </div>
+    </div>
+    <script src="cording.js"></script>
+</body>
+
+<body> 
+    <div class="img-wrapper">
+        <h4>Signature food</h4>
+        <div class="signature-container">
+            <img src="img/food.jpg">
+            <p>サーモンは刺身やカルパッチョで食べるのがおいしいですが、リッチな気分になれるサーモンステーキがおすすめです。サーモンの美味しさを引き立てる2種のソースも絶品です！</p>
+        </div>
+        <h4>Our Coffee</h4>
+        <div class="barista-container">
+            <img src="img/barista.jpg">
+            <p>当店のコーヒー豆は世界中から厳選して買い付けています。そして、そのコーヒー前のおいしさを最大限に引き出すために自社のロースタリーで焙煎しています。</p>
+        </div>
+        <h4>Our Food</h4>
+        <div class="food-container">
+            <img src="img/food3.jpg">
+            <p>当店はまず何より衛生管理に気をつけています。「安全・安心」をお届けするために日々継続的な努力を惜しみません。</p>
+        </div>
+    </div>
+</body>
+
+<body>
+    <div class="address-wrapper">
+        <div class="address-container">
+            <div class="text-container">
+                <h5>Address</h5>
+                <p>681 XXXX Drive, XXXXX XXXX #01 - 06 000000</p>
+                <p>Opening Hours</p>
+                <h5>Mondays - Friday: 10am - 9pm</h5>
+                <p>Saturdays, Sundays & Public Holidays: 9am - 9pm</p>
+            </div>
+            <div class="image-container">
+                <img src="img/barista.jpg" alt="Barista">
+            </div>
+        </div>
+    </div>
+</body>
+
+<body>
+    <h6>店舗一覧</h6>
+    <div class="shop-wrapper">
+        <div class="tokyo-container">
+            <img src="img/restaurant2.jpg">
+            <div class="address">
+                <div class="marker"></div>
+                <span>東京都渋谷区XXXXXX-XXXXXX</span>
+            </div>
+        </div>
+
+        <div class="chiba-container">
+        <div class="tokyo-container">
+        <div class="chiba-container">
+
+</body>
+
+<footer>
+    <ul>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">運営会社</a></li>
+    </ul>
+</footer>
+</html>
