@@ -1,7 +1,10 @@
+const mediaQueryList = matchMedia('(min-width:720px)');
+const slidePerView_ = mediaQueryList.matches ? 2 : 1;
+
 const swiper = new Swiper('.swiper', {
     slidesPerGroup: 1, 
-	slidesPerView: 2, 
-    loop: true,          
+    slidesPerView: slidePerView_, 
+    loop: true,  
     pagination: {
 	    el: '.swiper-pagination',
 	    type: 'bullets',
@@ -16,6 +19,8 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
+
+
 function toggleVisibility(id) {
     var element = document.getElementById(id);
     if (element.classList.contains("hidden")) {
@@ -26,6 +31,34 @@ function toggleVisibility(id) {
       element.classList.add("hidden");
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let headers = document.querySelectorAll(".toggle-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", function () {
+            let content = this.nextElementSibling;
+            let paragraphs = content.querySelectorAll("p");
+
+            if (content.classList.contains("show")) {
+                content.classList.remove("show");
+                paragraphs.forEach(p => {
+                    p.style.opacity = "0";
+                    p.style.transform = "translateY(10px)";
+                });
+            } else {
+                content.classList.add("show");
+                paragraphs.forEach((p, index) => {
+                    setTimeout(() => {
+                        p.style.opacity = "1";
+                        p.style.transform = "translateY(0)";
+                    }, index * 200);
+                });
+            }
+        });
+    });
+});
+
 
   document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll("h4, .signature-container img, .signature-container p, .barista-container img,.barista-container p,.food-container img,.food-container p");
@@ -61,4 +94,28 @@ function toggleVisibility(id) {
         observer.observe(addressWrapper);
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const shopWrapper = document.querySelector(".shop-wrapper");
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                } else {
+                    entry.target.style.opacity = "0";
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        shopWrapper.style.transition = "opacity 0.5s ease-in-out";
+        shopWrapper.style.opacity = "0"; 
+        observer.observe(shopWrapper);
+    });
 
+/*スマホ用JS*/
+$(function(){
+    $('#hamburger').on('click',function(){
+      $('#hamburger').toggleClass("open");
+      $('#header-menu').slideToggle();
+    });
+  });

@@ -64,7 +64,10 @@ nav ul li a:hover {
 .search-box button:hover {
     background-color:gainsboro;
 }
-
+#header-menu{
+    display:none;
+    list-style: none;
+}
 .swiper-wrapper {
     width: 100%;
     height: 100%;
@@ -127,11 +130,34 @@ h2, h3 {
     margin-top: 0;
     width: 100%;
     text-align: left;
+    overflow: hidden;
+    max-height: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   }
+  .content.show {
+    max-height: 500px;
+    transition: max-height 2.0s ease-in;
+}
 
-  .hidden {
+.container p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 1.0s ease;
+}
+
+.hidden {
     display: none;
-  }
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
   h4{
     font-size: 30px;
     height: auto;
@@ -213,12 +239,10 @@ h5{
 h6{
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 30px;
 }
 
-
 footer{
-    display: flex
     align-items: center;
     background-color :darkgrey;
     padding: 10px;
@@ -243,30 +267,127 @@ ul li a {
 ul li a:hover {
     background-color: grey;
 }
-.tokyo-container {
-    font-size: 18px;
+.shop-wrapper h6{
+    text-align: center;
 }
-.address {
+.shop-wrapper img{
     display: flex;
-    align-items: center;
-    margin-top: 10px;
+    width:200px;
+    height:200px;
+    border-radius: 75%;
+    padding:15px;
 }
-.marker {
-    width: 16px;
-    height: 24px;
-    background-color: black;
-    border-radius: 50% ;
-    position: relative;
-    margin-right: 8px;
+.shop{
+    display: flex;
+    justify-content: center;
 }
-.marker::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    body{
+        width: auto;
+    }
+    header {
+        width:auto;
+        background-color: lightgrey;
+        padding: 15px;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+    }
+    nav {
+        display: none;
+        position: fixed;
+        top: 24px;
+        width: 100%;
+        z-index: 10;
+    }
+
+    nav ul {
+        /*最初はナビゲーションボタンは非表示*/
+        display: none;
+        list-style:none;
+    }
+    nav ul li a{
+        padding: 8px;
+        font-size: 16px;
+        color: #464646;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+    }
+    .hamburger {
+        position: absolute;
+        top: 32px;
+        right:32px;
+        cursor: pointer;
+        width: 32px;
+        height: 24px;
+        z-index: 10;
+    }
+    .hamburger span {
+        /*3本の線を作る*/
+        transition: all .3s;
+        position: absolute;
+        height: 2px;
+        background-color: #333;
+        width:100%;
+        z-index: 10;
+    }
+    .hamburger span:nth-of-type(1) {
+        /*上の線の位置*/
+        top: 4px;
+    }
+    .hamburger span:nth-of-type(2) {
+        /*真ん中の線の位置*/
+        top: 12px;
+    }
+    .hamburger span:nth-of-type(3) {
+        /*下の線の位置*/
+        top: 20px;
+    }
+    .hamburger.open span:nth-of-type(1) {
+        /*openのとき、上の線を右斜めにする*/
+        top: 10px;
+        transform: translateY(6px) rotate(-33deg);
+    }
+    .hamburger.open span:nth-of-type(2) {
+        /*真ん中の線を消す*/
+        opacity: 0;
+    }
+    .hamburger.open span:nth-of-type(3) {
+        /*下の線を左斜めにする*/
+        top: 22px;
+        transform: translateY(-6px) rotate(33deg);
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+    .swiper-slide {     
+        display:flex;          
+        justify-content: space-between; 
+        width: 50%;
+        height: 25%;
+        
+    }
+    
+    .swiper-slide img {
+        width: 100%;   
+        height: 450px;         
+    }
+    .shop-wrapper img{
+        display: flex;
+        width:100px;
+        height:100px;
+        border-radius: 75%;
+        padding-left:5px;
+        padding-right: 5px;
+    }
+    .shop-wrapper p{
+        font-size: 25%;
+    }
 }
