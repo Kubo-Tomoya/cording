@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casteria</title>
     <!-- Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="cording.css">
 </head>
@@ -13,22 +14,38 @@
 
 
 <body>
-    <header>
-        <h1>Casteria</h1>
-        <nav>
-            <button class="menu-btn" aria-label="メニューを開閉">☰</button>
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Drink</a></li>
-                <li><a href="#">お問合わせ</a></li>
-                <li class="search-box">
-                    <input type="text" placeholder="Search">
-                    <button type="submit">Search</button>
-                </li>
-            </ul>         
-        </nav>
-    </header>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><h1>Casteria</h1> </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            
+                  <div class="collapse navbar-collapse" id="navbarsExample03">
+                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      
+                    </ul>
+                    <form role="search">
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <div>
+                        <button type="button" class="btn btn-light text-dark me-2">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
 
     <div class="swiper">
         <div class="swiper-wrapper">
@@ -50,8 +67,6 @@
         <div class="swiper-button-next"></div>
 
     </div>
-
-    <!-- SwiperのJSを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="cording.js"></script>
 
@@ -156,6 +171,8 @@
                 <li><a href="#">お問い合わせ</a></li>
                 <li><a href="#">運営会社</a></li>
         </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 
