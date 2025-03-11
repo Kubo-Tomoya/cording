@@ -113,9 +113,11 @@ function toggleVisibility(id) {
     });
 
 /*スマホ用JS*/
-$(function(){
-    $('#hamburger').on('click',function(){
-      $('#hamburger').toggleClass("open");
-      $('#header-menu').slideToggle();
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".menu-btn");
+    const navMenu = document.querySelector(".nav-menu");
+
+    menuBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("active"); // メニューの表示・非表示を切り替え
     });
-  });
+});
