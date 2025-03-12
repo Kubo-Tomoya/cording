@@ -16,8 +16,14 @@ const swiper = new Swiper('.swiper', {
     },
     fadeEffect: {
         crossFade: true   
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar', // スクロールバー要素
+        draggable: true         // ドラッグでスライド可能
     }
 });
+
+
 
 
 

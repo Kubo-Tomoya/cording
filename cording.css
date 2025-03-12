@@ -10,51 +10,11 @@ h1{
     margin: 0;      
     padding: 10px 0; 
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
     background-color: lightgrey;
-    padding: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding:0;
 }
 
-.header-top{
-    list-style: none;
-    display: flex;
-    align-items: center;  
-    justify-content: flex-end; 
-    margin: 0;
-    padding: 0;
-    background-color: lightgrey;
-}
-
-.search-box {
-    margin-left: 20px;
-    border-radius: 2px;
-}
-
-.search-box input {
-    padding: 5px;
-    border: none;
-}
-.search-box button {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-.search-box button:hover {
-    background-color:gainsboro;
-}
-#header-menu{
-    display:none;
-    list-style: none;
-}
 .swiper-wrapper {
     width: 100%;
     height: 100%; 
@@ -78,7 +38,11 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 15px;
   }
+
+
+
 h2{
     text-align: center;
     font-size: 30px;
@@ -93,7 +57,6 @@ h2, h3 {
     width: 100%;
     max-width: 70%; 
     text-align: left;
-    border-bottom: 1px solid white;
   }
 .toggle-header,.content {
   margin: 0;
@@ -109,6 +72,7 @@ h2, h3 {
     cursor: pointer;
     width: 100%;
     text-align: left; 
+    border-bottom: 1px solid white;
   }
   
   .content {
@@ -149,8 +113,8 @@ h2, h3 {
     height: auto;
   }
 .img-wrapper{
-    padding-left: 15%;
-    width:70%;
+    padding:5% 15%;
+    width:100%;
     align-items: stretch;
 }
 .img-wrapper img {
@@ -160,7 +124,7 @@ h2, h3 {
 
 .img-wrapper p {
     width: 50%;
-    padding-left: 40px; 
+    padding:0 40px; 
     box-sizing: border-box;
 }
 .signature-container, .barista-container, .food-container {
@@ -184,7 +148,7 @@ h5{
     font-size: 25px;
 }
 .address-wrapper {
-    padding-left: 12%;
+    margin:0 auto;
     width:76%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -202,7 +166,7 @@ h5{
     margin-left: 5%;
 }
 .text-container p, .text-container h5 {
-    line-height: 0.5; 
+    line-height: 2.0; 
 }
 
 .text-container p{
@@ -217,42 +181,21 @@ h5{
 
 .image-container img {
     max-width: 95%;
-    padding-left: 10%;
+    padding: 0 5%;
     margin-top: 5%;
     padding-bottom: 5%;
+}
+.shop-wrapper{
+    margin: 30px auto;
 }
 
 h6{
     text-align: center;
     color: black;
-    font-size: 30px;
-}
-
-footer{
-    align-items: center;
-    background-color :darkgrey;
-    padding: 10px;
+    font-size: 25px;
 }
 
 
-ul{
-    display: flex;
-    justify-content: center; 
-    gap: 1px;
-    padding: 10px 0;
-    text-decoration: none;
-    list-style: none;
-    height: 0;
-
-}
-ul li a {
-    color: black;
-    text-decoration: none;
-    padding: 8px 12px;
-}
-ul li a:hover {
-    background-color: grey;
-}
 .shop-wrapper h6{
     text-align: center;
 }
@@ -267,12 +210,36 @@ ul li a:hover {
     display: flex;
     justify-content: center;
 }
+footer{
+    align-items: center;
+    background-color :darkgrey;
+    padding: 10px;
+}
+.footer-menu{
+    display: flex;
+    justify-content: center; 
+    gap: 1px;
+    padding: 10px 0;
+    text-decoration: none;
+    list-style: none;
+    height: 0;
+    color: black;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+.footer-menu a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+.footer-menu:hover {
+    background-color: grey;
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 760px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
-    body{
-        width: auto;
-    }
+    
     header {
         width:auto;
         background-color: lightgrey;
@@ -281,56 +248,7 @@ ul li a:hover {
         color: black;
         cursor: pointer;
     }
-    nav ul {
-        /*最初はナビゲーションボタンは非表示*/
-        display: none;
-        list-style:none;
-    }
-    nav ul li a{
-        padding: 8px;
-        font-size: 16px;
-        color: #464646;
-        display: block;
-        text-align: center;
-        text-decoration: none;
-    }
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        text-align: center;
-        padding: 10px 0;
-    }
 
-    .nav-menu li {
-        padding: 10px 0;
-    }
-
-    /* 検索ボックスを中央配置 */
-    .search-box {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .search-box input {
-        width: 80%;
-        margin-bottom: 5px;
-    }
-
-    /* ハンバーガーボタンを表示 */
-    .menu-btn {
-        display: block;
-        font-size: 30px;
-    }
-
-    /* メニューが開いたときの表示 */
-    .nav-menu.active {
-        display: flex;
-    }
 
     .swiper-wrapper {
         width: 100%;
@@ -349,15 +267,81 @@ ul li a:hover {
         width: 100%;   
         height: 450px;         
     }
+
+    .container {
+        width: 100%;
+        max-width: 90%;
+        text-align: left;
+    }
+    .signature-container, .barista-container, .food-container {
+        display: block;
+    }
+    .img-wrapper{
+        margin:0 ;
+        width:100%;
+        padding:0 36px;
+    }
+    .img-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .img-wrapper p {
+        width: 100%;
+        text-align: left;
+        padding:0 0;
+    }
+
+    h5{
+        color:white;
+        font-size: 25px;
+    }
+    .address-wrapper {
+        width:85%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .address-container {
+        display: block;
+        align-items: center;
+        background-color: black;
+        margin-top: 5%;
+    }
+    
+    .text-container {
+        width: 100%;
+        margin-left: 5%;
+    }
+    .text-container p, .text-container h5 {
+        line-height: 2.0; 
+    }
+    
+    .text-container p{
+        color:white;
+    }
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-right: 5%;
+    }
+    
+    .image-container img {
+        max-width: 95%;
+        padding: 0 5%;
+        margin-top: 5%;
+        padding-bottom: 5%;
+    }
+
+
     .shop-wrapper img{
         display: flex;
         width:100px;
         height:100px;
         border-radius: 75%;
-        padding-left:5px;
-        padding-right: 5px;
+        padding:0 5px;
     }
     .shop-wrapper p{
-        font-size: 25%;
+        font-size: 50%;
     }
 }
