@@ -333,7 +333,9 @@ footer{
         padding-bottom: 5%;
     }
 
-
+    .shop-wrapper{
+        display:none;
+    }
     .shop-wrapper img{
         display: flex;
         width:100px;
